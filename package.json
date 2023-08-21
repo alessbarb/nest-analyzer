@@ -1,11 +1,45 @@
 {
   "name": "nest-analyzer",
   "version": "1.0.0",
-  "description": "Dependency analysis in NestJS",
-  "main": "main.ts",
+  "description": "Una herramienta de análisis de dependencias para proyectos NestJS",
+  "main": "dist/main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/cli.js",
+    "build": "rm -rf build | tsc",
+    "test": "jest",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
+  "bin": {
+    "nest-analyzer": "./bin/nest-analyzer"
+  },
+  "keywords": [
+    "nestjs",
+    "dependency",
+    "analysis",
+    "analyzer"
+  ],
   "author": "Alessandro Barbagallo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ts-morph": "^19.0.0",
+    "typescript": "^5.1.6",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/yargs": "^17.0.24",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "gts": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "prettier": "3.0.2",
+    "typescript": "~5.1.6"
+  }
 }
