@@ -1,4 +1,4 @@
-# NestJS Dependency Analyzer
+# NestJS Dependency Analyzer (WIP 🚧)
 
 The "NestJS Dependency Analyzer" is a tool designed to analyze NestJS projects and generate a visual representation of the dependencies between modules, services, controllers, and other components within the project.
 
